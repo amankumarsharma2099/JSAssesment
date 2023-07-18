@@ -1,0 +1,46 @@
+// create a variable to hold your NFT's
+const GFTs = [];
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (_name, _company, _empid, _designation, _department) {
+    const GFT = {
+        "name" : _name,
+        "company": _company,
+        "empid" : _empid,
+        "designation"  : _designation,
+        "department": _department,
+      
+    }
+    GFTs.push(GFT);
+    console.log("Minted :" + _name);
+
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+    for(let i = 0; i<GFTs.length; i++){
+        console.log("\nID  :\t\t" + i+1);
+        console.log("Name :\t\t" + GFTs[i].name);
+        console.log("Company :\t\t" + GFTs[i].company);
+        console.log("Emp id  :\t\t" + GFTs[i].empid);
+        console.log("Designation :\t\t" + GFTs[i].designation);
+        console.log("Department:" + GFTs[i].department);
+    }
+
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("\n"+GFTs.length);
+
+}
+
+// call your functions below this line
+mintNFT("Aman","rkfl","2001","je","Finance");
+mintNFT("Ankit","tatapower","17003","exeeng","Hr");
+mintNFT("Abhishek","adanipower","25535","qualityeng","QualityControl");
+
+listNFTs();
+getTotalSupply();
